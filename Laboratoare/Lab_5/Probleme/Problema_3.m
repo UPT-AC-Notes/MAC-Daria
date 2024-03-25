@@ -1,14 +1,22 @@
-x0=[-3;-1;0;1;3];
-y0=[3;2;1;-1;-4];
+x0 = [-3;-1;0;1;3];
+y0 = [3;2;1;-1;-4];
 
-A = [1 -3 9; 1 -1 1; 1 0 0; 1 1 1;1 3 9];
-b = [3; 2; 1; -1; -4];
+A = [ones(length(x0), 1), x0, x0.^2];
 
-x = (A' * A) \ (A' * b)
+b = y0;
 
-r = b - A * x;
+coeff = (A' * A) \ (A' * b)
 
-norm(r)
+r = b - A * coeff;
 
-REMP = norm(r) / (sqrt(length(r)))
+norma = norm(r);
 
+REMP = norma / sqrt(length(r))
+
+c = polyfit(x0, y0,2);
+
+x = -4 : 0.01 : 4;
+
+y = polyval(c, x);
+
+plot(x0, y0, 'o', x, y);

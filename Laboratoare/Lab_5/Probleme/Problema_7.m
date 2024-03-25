@@ -12,6 +12,9 @@ c2 = x(2);
 
 y_aprox = c1 * exp(c2 * t0);
 
+% r_normal  = b - A * x;
+% 
+% norma = norm(r_normal)
 
 r = y0 - y_aprox;
 

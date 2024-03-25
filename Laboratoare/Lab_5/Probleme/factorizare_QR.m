@@ -1,10 +1,5 @@
-%qr realizeaza factorizarea QR pentru o matrice m × n.
+A = [1 -4;2 3;2 2];
 
-%factorizarea qr redusa
-A=[1 -4;2 3;2 2];
-[Q,R]=qr(A,0)
+[Q, R] = qr(A, 0)
 
-
-%factorizarea qr completa
-A=[1 -4;2 3;2 2];
-[Q,R]=qr(A)
+[Q1, R1] = qr(A)
